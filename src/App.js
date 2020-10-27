@@ -1,4 +1,5 @@
 import React from 'react';
+import data from './data/Apprentice_TandemFor400_Data.json';
 
 function App() {
   return (
