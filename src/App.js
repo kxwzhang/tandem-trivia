@@ -1,12 +1,18 @@
 import React from 'react';
+import './trivia.css';
 import data from './data/Apprentice_TandemFor400_Data.json';
 
 function App() {
   return (
-    <div class='trivia-container'>
-      <h1>Tandem Trivia App</h1>
+    <div className='trivia-container'>
       <div>
-        {/* Place questions here */}
+        Questions Placeholder
+      </div>
+      <div className='trivia-answers-container'>
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+        <div>Option 4</div>
       </div>
     </div>
   );
