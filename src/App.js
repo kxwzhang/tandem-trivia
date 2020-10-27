@@ -1,4 +1,5 @@
 import React from 'react';
+import './reset.css';
 import './trivia.css';
 import data from './data/Apprentice_TandemFor400_Data.json';
 
