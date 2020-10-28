@@ -5,6 +5,7 @@ import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 
 function App() {
+  const [allQuestions, setAllQuestions] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
@@ -20,11 +21,13 @@ function App() {
   useEffect(() => {
     fetch('./Apprentice_TandemFor400_Data.json')
       .then(res => res.json())
-      .then(data => setQuestions(generateRandomQuestions(data)));
+      .then(data => {
+        setAllQuestions(data);
+        setQuestions(generateRandomQuestions(data));
+      });
   }, []);
 
   function handleUpdate(answer) {
-    console.log('clicking');
     setClicked(true); // Disable clicking
     if (answer === questions[questionNumber].correct) setScore(score + 1000);
     if (!gameOver) {
@@ -40,18 +43,29 @@ function App() {
     }
   };
 
+  function handleStartGame() {
+    setQuestions(generateRandomQuestions(allQuestions));
+    setQuestionNumber(0);
+    setScore(0);
+    setClicked(false);
+    setGameOver(false);
+  }
+
   /* If the game is over, render the game over component
   Otherwise check that the questions array is loaded on the page 
   then render the trivia component */
-  return gameOver ? <GameOver score={score} /> : questions.length ? (
+  return (
+    gameOver ? <GameOver score={score} handleStartGame={handleStartGame} /> : questions.length ? (
     <div className='trivia-container'>
       <h1 className='trivia-title'>Tandem Trivia-Hoot!</h1>
       <Trivia 
+        questionNumber={questionNumber + 1}
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
         clicked={clicked} />
     </div>
-  ) : (<div></div>);
+  ) : (<div></div>)
+  );
 };
 
 export default App;
