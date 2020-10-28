@@ -11,10 +11,9 @@ function App() {
     Duplicate original questions array then sort based 
     on the difference between a random number and 0.5
     */
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
-
+    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
     // Get sub-array of first 10 elements after shuffling
-    return shuffled.slice(0, 10);
+    return shuffledQuestions.slice(0, 10);
   }
 
   useEffect(() => {
