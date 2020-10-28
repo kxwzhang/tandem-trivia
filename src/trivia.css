@@ -10,6 +10,19 @@ body {
 }
 
 .trivia-container {
+  text-align: center;
+}
+
+.trivia-title {
+  font-size: 40px;
+  color: blueviolet;
+}
+
+.score {
+  font-size: 28px;
+  color: darkblue;
+  /* border: 1px solid red; */
+  padding: 10px;
 }
 
 .trivia-question-container {
