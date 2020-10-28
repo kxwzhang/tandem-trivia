@@ -24,19 +24,19 @@ function App() {
 
   console.log(questions);
 
-  return (
+  return questions.length ? (
     <div className='trivia-container'>
       <div className='trivia-question-container'>
-        <h1 className='trivia-question'>Questions Placeholder</h1>
+        <h1 className='trivia-question'>Question: {questions[0].question}</h1>
       </div>
       <div className='trivia-answers-container'>
-        <button className='trivia-answer-button'>Option 1</button>
-        <button className='trivia-answer-button'>Option 2</button>
-        <button className='trivia-answer-button'>Option 3</button>
-        <button className='trivia-answer-button'>Option 4</button>
+        <button className='trivia-answer-button'>1) {questions[0].correct}</button>
+        <button className='trivia-answer-button'>2) {questions[0].incorrect[0]}</button>
+        <button className='trivia-answer-button'>3) {questions[0].incorrect[1]}</button>
+        <button className='trivia-answer-button'>4) {questions[0].incorrect[2]}</button>
       </div>
     </div>
-  );
+  ) : (<div></div>);
 }
 
 export default App;
