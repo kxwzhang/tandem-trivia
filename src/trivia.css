@@ -1,3 +1,14 @@
+html {
+  background-color: lightblue;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .trivia-answers-container {
   /* display: flex; */
 }
