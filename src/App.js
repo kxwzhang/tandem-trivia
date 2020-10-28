@@ -2,18 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './reset.css';
 import './trivia.css';
 import { Trivia } from './components/trivia';
+import { GameOver } from './components/game_over';
 
 function App() {
   const [questions, setQuestions] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [clicked, setClicked] = useState(false);
+  const [gameOver, setGameOver] = useState(true);
 
   function generateRandomQuestions(questions) {
-    /* Duplicate original questions array then sort based 
-    on the difference between a random number and 0.5 */
     const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
-    // Get sub-array of first 10 elements after shuffling
     return shuffledQuestions.slice(0, 10);
   };
 
@@ -27,23 +26,26 @@ function App() {
   function handleUpdate(answer) {
     console.log('clicking');
     setClicked(true); // Disable clicking
-    // If the answer is correct update our score
     if (answer === questions[questionNumber].correct) setScore(score + 1000);
-    if (questionNumber < 10) {
+    if (!gameOver) {
       // After 3 seconds, update to next question and re-enable clicking
       setTimeout(() => {
-        setQuestionNumber(questionNumber + 1);
-        setClicked(false);
+        if (questionNumber + 1 < 10) {
+          setQuestionNumber(questionNumber + 1);
+          setClicked(false);
+        } else {
+          setGameOver(true);
+        }
       }, 3000);
-    } else {
-      // Reset the game after the last question has been reache 
     }
   };
 
-  return questions.length ? (
+  /* If the game is over, render the game over component
+  Otherwise check that the questions array is loaded on the page 
+  then render the trivia component */
+  return gameOver ? <GameOver score={score} /> : questions.length ? (
     <div className='trivia-container'>
       <h1 className='trivia-title'>Tandem Trivia-Hoot!</h1>
-      <h2 className='score'>Score: {score}</h2>
       <Trivia 
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
