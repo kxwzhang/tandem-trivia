@@ -9,7 +9,7 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [clicked, setClicked] = useState(false);
-  const [gameOver, setGameOver] = useState(true);
+  const [gameOver, setGameOver] = useState(false);
 
   function generateRandomQuestions(questions) {
     const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
