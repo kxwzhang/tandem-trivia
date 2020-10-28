@@ -10,10 +10,10 @@ function App() {
         <h1 className='trivia-question'>Questions Placeholder</h1>
       </div>
       <div className='trivia-answers-container'>
-        <div>Option 1</div>
-        <div>Option 2</div>
-        <div>Option 3</div>
-        <div>Option 4</div>
+        <button className='trivia-answer-button'>Option 1</button>
+        <button className='trivia-answer-button'>Option 2</button>
+        <button className='trivia-answer-button'>Option 3</button>
+        <button className='trivia-answer-button'>Option 4</button>
       </div>
     </div>
   );

@@ -18,8 +18,21 @@ body {
 
 .trivia-question {
   font-size: 20px;
+  text-align: center;
 }
 
 .trivia-answers-container {
   /* display: flex; */
+  margin-top: 5px;
+}
+
+.trivia-answer-button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
 }
