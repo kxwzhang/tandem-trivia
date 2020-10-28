@@ -43,6 +43,10 @@ function App() {
     }
   };
 
+  function highlightAnswers() {
+    
+  }
+
   function handleStartGame() {
     setQuestions(generateRandomQuestions(allQuestions));
     setQuestionNumber(0);

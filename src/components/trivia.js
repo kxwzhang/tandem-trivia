@@ -8,6 +8,7 @@ export const Trivia = ({
 
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
 
+  // Whenever the question changes, shuffle the new question's answers
   useEffect(() => {
     setShuffledAnswers([correct, ...incorrect].sort(() => Math.random() - 0.5));
   }, [questionNumber]);
