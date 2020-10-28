@@ -9,6 +9,17 @@ body {
   height: 100vh;
 }
 
+.trivia-question-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
+}
+
+.trivia-question {
+  font-size: 20px;
+}
+
 .trivia-answers-container {
   /* display: flex; */
 }

@@ -6,8 +6,8 @@ import data from './data/Apprentice_TandemFor400_Data.json';
 function App() {
   return (
     <div className='trivia-container'>
-      <div>
-        Questions Placeholder
+      <div className='trivia-question-container'>
+        <h1 className='trivia-question'>Questions Placeholder</h1>
       </div>
       <div className='trivia-answers-container'>
         <div>Option 1</div>
