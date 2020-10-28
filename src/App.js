@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './reset.css';
 import './trivia.css';
 import data from './data/Apprentice_TandemFor400_Data.json';
 
 function App() {
+  const [questions, setQuestions] = useState(data);
+
   return (
     <div className='trivia-container'>
       <div className='trivia-question-container'>
