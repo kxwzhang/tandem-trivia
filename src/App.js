@@ -59,7 +59,7 @@ function App() {
   };
 
   function highlightAnswers() {
-    // const buttons = document.querySelector(`.${answer}`)
+    
   }
 
   function handleStartGame() {
