@@ -68,5 +68,17 @@ body {
   font-weight: bold;
   font-size: 16px;
   margin: 10px;
-  width: calc(50% - 20px); /* Recalculates the width to account for margin */
+  width: calc(50% - 30px); /* Recalculates the width to account for margin */
+}
+
+.trivia-answer-button.green {
+  border: 5px solid green;
+}
+
+.trivia-answer-button.red {
+  border: 5px solid red;
+}
+
+.trivia-answer-button.user-answer {
+  background-color: beige;
 }

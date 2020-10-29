@@ -27,13 +27,28 @@ function App() {
       });
   }, []);
 
-  function handleUpdate(answer) {
+  function handleUpdate(e, answer) {
+    const currButton = e.currentTarget;
+    currButton.classList.add('user-answer');
+    const buttons = document.querySelectorAll('.trivia-answer-button');
+    buttons.forEach(button => {
+      if (button.innerHTML === questions[questionNumber].correct) {
+        button.classList.add('green');
+      } else {
+        button.classList.add('red');
+      }
+    });
     setClicked(true); // Disable clicking
     if (answer === questions[questionNumber].correct) setScore(score + 1000);
     if (!gameOver) {
       // After 3 seconds, update to next question and re-enable clicking
       setTimeout(() => {
         if (questionNumber + 1 < 10) {
+          buttons.forEach(button => {
+            button.classList.remove('green');
+            button.classList.remove('red');
+          });
+          currButton.classList.remove('user-answer');
           setQuestionNumber(questionNumber + 1);
           setClicked(false);
         } else {
@@ -44,7 +59,7 @@ function App() {
   };
 
   function highlightAnswers() {
-    
+    // const buttons = document.querySelector(`.${answer}`)
   }
 
   function handleStartGame() {

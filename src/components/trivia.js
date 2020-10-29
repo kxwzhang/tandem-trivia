@@ -11,6 +11,7 @@ export const Trivia = ({
   // Whenever the question changes, shuffle the new question's answers
   useEffect(() => {
     setShuffledAnswers([correct, ...incorrect].sort(() => Math.random() - 0.5));
+    // setCurrCorrect(correct);
   }, [questionNumber]);
 
   return (
@@ -24,7 +25,7 @@ export const Trivia = ({
             <button
               key={idx} 
               disabled={clicked}
-              onClick={() => handleUpdate(answer)}
+              onClick={(e) => handleUpdate(e, answer)}
               className='trivia-answer-button'>{answer}</button>
           );
         })}
