@@ -26,11 +26,17 @@ body {
 }
 
 .score {
+  display: flex;
   font-size: 28px;
   color: darkblue;
   /* border: 1px solid red; */
   padding: 10px;
   text-align: center;
+}
+
+.score-text {
+  color: green;
+  padding: 0 9px;
 }
 
 .play-again {
@@ -39,6 +45,14 @@ body {
   padding: 20px;
   width: 50%;
   font-size: 16px;
+  font-weight: bold;
+}
+
+.play-again:hover, 
+.trivia-answer-button:hover,
+.next-button:hover {
+  cursor: pointer;
+  background-color: beige;
 }
 
 .trivia-question-container {
@@ -64,9 +78,37 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
-  padding: 20px;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
   margin: 10px;
   width: calc(50% - 20px); /* Recalculates the width to account for margin */
+}
+
+.trivia-answer-button.green {
+  color: green;
+}
+
+.trivia-answer-button.red {
+  color: red;
+}
+
+.trivia-answer-button.user-answer {
+  background-color: beige;
+}
+
+.next-button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
+  margin: 10px;
+}
+
+.pick-text {
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px;
 }
