@@ -3,7 +3,7 @@ import './reset.css';
 import './trivia.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
-import { Counter } from './components/counter';
+import { Next } from './components/next';
 
 function App() {
   const [allQuestions, setAllQuestions] = useState([]);
@@ -11,12 +11,8 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [clicked, setClicked] = useState(false);
-  const [gameOver, setGameOver] = useState(true);
-
-  function generateRandomQuestions(questions) {
-    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
-    return shuffledQuestions.slice(0, 10);
-  };
+  const [gameOver, setGameOver] = useState(false);
+  const [nextButton, setNextButton] = useState(false);
 
   // On page load, fetch the trivia data
   useEffect(() => {
@@ -28,27 +24,29 @@ function App() {
       });
   }, []);
 
+  // When the question changes, remove the classes for correct/incorrect/selected answers
+  useEffect(() => {
+    const buttons = document.querySelectorAll('.trivia-answer-button');
+    buttons.forEach(button => {
+      button.classList.remove('green');
+      button.classList.remove('red');
+      button.classList.remove('user-answer');
+    });
+  }, [questionNumber]);
+
+  function generateRandomQuestions(questions) {
+    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
+    return shuffledQuestions.slice(0, 10);
+  };
+
   function handleUpdate(e, answer) {
+    setClicked(true); // Disable clicking
     const currButton = e.currentTarget;
     const buttons = document.querySelectorAll('.trivia-answer-button');
     highlightAnswers(currButton, buttons);
-    setClicked(true); // Disable clicking
     if (answer === questions[questionNumber].correct) setScore(score + 1000);
     if (!gameOver) {
-      // After 3 seconds, update to next question and re-enable clicking
-      setTimeout(() => {
-        if (questionNumber + 1 < 10) {
-          buttons.forEach(button => {
-            button.classList.remove('green');
-            button.classList.remove('red');
-          });
-          currButton.classList.remove('user-answer');
-          setQuestionNumber(questionNumber + 1);
-          setClicked(false);
-        } else {
-          setGameOver(true);
-        }
-      }, 3000);
+      setNextButton(true); // Render the Next Question button
     }
   };
 
@@ -63,7 +61,7 @@ function App() {
         button.classList.add('red');
       }
     });
-  }
+  };
 
   function handleStartGame() {
     setQuestions(generateRandomQuestions(allQuestions));
@@ -71,7 +69,18 @@ function App() {
     setScore(0);
     setClicked(false);
     setGameOver(false);
-  }
+    setNextButton(false);
+  };
+
+  function nextQuestion() {
+    if (questionNumber + 1 < 10) {
+      setQuestionNumber(questionNumber + 1);
+      setClicked(false);
+      setNextButton(false);
+    } else {
+      setGameOver(true);
+    }
+  };
 
   /* If the game is over, render the game over component
   Otherwise check that the questions array is loaded on the page 
@@ -85,7 +94,7 @@ function App() {
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
         clicked={clicked} />
-      {clicked ? <Counter questionNumber={questionNumber} /> : <div>Pick your answer!</div>}
+      {nextButton ? <Next nextQuestion={nextQuestion} /> : <div className='pick-text'>Pick your answer!</div>}
     </div>
   ) : (<div></div>)
   );

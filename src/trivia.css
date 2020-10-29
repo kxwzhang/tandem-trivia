@@ -49,7 +49,8 @@ body {
 }
 
 .play-again:hover, 
-.trivia-answer-button:hover {
+.trivia-answer-button:hover,
+.next-button:hover {
   cursor: pointer;
   background-color: beige;
 }
@@ -77,9 +78,9 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
-  padding: 20px;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
   margin: 10px;
   width: calc(50% - 20px); /* Recalculates the width to account for margin */
 }
@@ -94,4 +95,20 @@ body {
 
 .trivia-answer-button.user-answer {
   background-color: beige;
+}
+
+.next-button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
+  margin: 10px;
+}
+
+.pick-text {
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px;
 }
