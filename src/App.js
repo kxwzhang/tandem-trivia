@@ -3,6 +3,7 @@ import './reset.css';
 import './trivia.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
+import { Counter } from './components/counter';
 
 function App() {
   const [allQuestions, setAllQuestions] = useState([]);
@@ -10,7 +11,7 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [clicked, setClicked] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(true);
 
   function generateRandomQuestions(questions) {
     const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
@@ -29,15 +30,8 @@ function App() {
 
   function handleUpdate(e, answer) {
     const currButton = e.currentTarget;
-    currButton.classList.add('user-answer');
     const buttons = document.querySelectorAll('.trivia-answer-button');
-    buttons.forEach(button => {
-      if (button.innerHTML === questions[questionNumber].correct) {
-        button.classList.add('green');
-      } else {
-        button.classList.add('red');
-      }
-    });
+    highlightAnswers(currButton, buttons);
     setClicked(true); // Disable clicking
     if (answer === questions[questionNumber].correct) setScore(score + 1000);
     if (!gameOver) {
@@ -58,8 +52,17 @@ function App() {
     }
   };
 
-  function highlightAnswers() {
-    
+  /* Grab the current button and all the buttons, and add class depending 
+  on the correctness of the button's answer */
+  function highlightAnswers(currButton, buttons) {
+    currButton.classList.add('user-answer');
+    buttons.forEach(button => {
+      if (button.innerHTML === questions[questionNumber].correct) {
+        button.classList.add('green');
+      } else {
+        button.classList.add('red');
+      }
+    });
   }
 
   function handleStartGame() {
@@ -82,6 +85,7 @@ function App() {
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
         clicked={clicked} />
+      {clicked ? <Counter questionNumber={questionNumber} /> : <div>Pick your answer!</div>}
     </div>
   ) : (<div></div>)
   );
