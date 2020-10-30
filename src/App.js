@@ -14,7 +14,7 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [nextButton, setNextButton] = useState(false);
-  const [preDep, setPreDep] = useState(0);
+  // Check predep
 
   // On page load, fetch the trivia data
   useEffect(() => {
