@@ -17,4 +17,4 @@ Some highlights include:\
 In the project directory, please run `npm install` to download all the
 dependencies that are used for this project. Then you can run `npm start` in the project directory.\
 This will run the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Please open [http://localhost:3000/tandem-trivia/](http://localhost:3000/tandem-trivia/) to view it in the browser.
