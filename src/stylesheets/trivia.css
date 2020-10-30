@@ -1,6 +1,4 @@
 html {
-  /* background-color: lightblue; */
-  /* background-color: white; */
   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(32, 30, 32));
 }
 
@@ -36,7 +34,6 @@ body {
   display: flex;
   font-size: 28px;
   color: darkblue;
-  /* border: 1px solid red; */
   padding: 10px;
   text-align: center;
 }
@@ -83,7 +80,6 @@ body {
 }
 
 .trivia-answer-button {
-  /* background-color: white; */
   background-color: rgb(219, 223, 159);
   border: 1px solid purple;
   border-radius: 5px;
