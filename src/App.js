@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './reset.css';
-import './trivia.css';
+import './stylesheets/reset.css';
+import './stylesheets/trivia.css';
+import './stylesheets/animations.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 import { Next } from './components/next';
@@ -44,7 +45,7 @@ function App() {
     const currButton = e.currentTarget;
     const buttons = document.querySelectorAll('.trivia-answer-button');
     highlightAnswers(currButton, buttons);
-    if (answer === questions[questionNumber].correct) setScore(score + 1000);
+    if (answer === questions[questionNumber].correct) setScore(score + 1);
     if (!gameOver) {
       setNextButton(true); // Render the Next Question button
     }
@@ -94,7 +95,11 @@ function App() {
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
         clicked={clicked} />
-      {nextButton ? <Next nextQuestion={nextQuestion} /> : <div className='pick-text'>Pick your answer!</div>}
+      {
+      nextButton ? 
+      <Next nextQuestion={nextQuestion} questionNumber={questionNumber} /> : 
+      <div className='pick-text shimmer'>Pick your answer!</div>
+      }
     </div>
   ) : (<div></div>)
   );
