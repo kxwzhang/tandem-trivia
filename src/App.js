@@ -18,7 +18,7 @@ function App() {
 
   // On page load, fetch the trivia data
   useEffect(() => {
-    fetch('./Apprentice_TandemFor400_Data.json')
+    fetch('./tandem-trivia/Apprentice_TandemFor400_Data.json')
       .then(res => res.json())
       .then(data => {
         setAllQuestions(data);
