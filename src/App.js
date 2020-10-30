@@ -14,7 +14,6 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [nextButton, setNextButton] = useState(false);
-  // update predeployment
 
   // On page load, fetch the trivia data
   useEffect(() => {
