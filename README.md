@@ -1,7 +1,7 @@
 ## What is Tandem Trivia-Hoot! 
 ### [Live Site](https://kxwzhang.github.io/tandem-trivia/)
 *Tandom Trivia-Hoot!* is a mobile-friendly trivia game where each round consists of 10 questions.
-Try to answer as many questions correctly!
+Try to answer as many questions correctly as you can!
 
 React is the main technology used in building this app and no other dependencies
 are required to get this project running locally.
