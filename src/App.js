@@ -14,11 +14,10 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [nextButton, setNextButton] = useState(false);
-  // Check predep
 
   // On page load, fetch the trivia data
   useEffect(() => {
-    fetch('./tandem-trivia/Apprentice_TandemFor400_Data.json')
+    fetch('./Apprentice_TandemFor400_Data.json')
       .then(res => res.json())
       .then(data => {
         setAllQuestions(data);
