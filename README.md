@@ -1,4 +1,5 @@
 ## What is Tandem Trivia-Hoot! 
+[Live Site](https://kxwzhang.github.io/tandem-trivia/)\
 *Tandom Trivia-Hoot!* is a mobile-friendly trivia game where each round consists of 10 questions.
 Try to answer as many questions correctly!
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './stylesheets/reset.css';
-import './stylesheets/trivia.css';
-import './stylesheets/animations.css';
+import './reset.css';
+import './trivia.css';
+import './animations.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 import { Next } from './components/next';
