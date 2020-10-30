@@ -1,4 +1,3 @@
-// React component and CSS imports
 import React, { useState, useEffect } from 'react';
 import './reset.css';
 import './trivia.css';
