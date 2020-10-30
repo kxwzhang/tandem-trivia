@@ -1,5 +1,5 @@
 html {
-  background-color: lightblue;
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(32, 30, 32));
 }
 
 body {
@@ -19,6 +19,11 @@ body {
   padding: 10px;
 }
 
+.trivia-title, 
+.pick-text {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .game-over-container {
   display: flex;
   flex-direction: column;
@@ -29,14 +34,8 @@ body {
   display: flex;
   font-size: 28px;
   color: darkblue;
-  /* border: 1px solid red; */
   padding: 10px;
   text-align: center;
-}
-
-.score-text {
-  color: green;
-  padding: 0 9px;
 }
 
 .play-again {
@@ -56,10 +55,17 @@ body {
 }
 
 .trivia-question-container {
-  background-color: white;
+  background-color: rgb(219, 223, 159);
   padding: 30px;
   border-radius: 5px;
+  border: 1px solid purple;
   box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
+}
+
+.trivia-question, 
+.trivia-answer-button,
+.next-button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .trivia-question {
@@ -74,8 +80,8 @@ body {
 }
 
 .trivia-answer-button {
-  background-color: white;
-  border: none;
+  background-color: rgb(219, 223, 159);
+  border: 1px solid purple;
   border-radius: 5px;
   box-shadow: 8px 7px 15px 1px rgba(0,0,0,0.33);
   font-size: 16px;
@@ -98,8 +104,8 @@ body {
 }
 
 .next-button {
-  background-color: white;
-  border: none;
+  background-color: rgb(219, 223, 159);
+  border: 1px solid purple;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
@@ -109,6 +115,7 @@ body {
 
 .pick-text {
   font-size: 16px;
-  padding: 5px;
+  padding: 7px;
   margin: 10px;
 }
+
