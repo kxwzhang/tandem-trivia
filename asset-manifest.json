@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d6600df.chunk.css",
-    "main.js": "/static/js/main.a5ac2ce4.chunk.js",
-    "main.js.map": "/static/js/main.a5ac2ce4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a12c49e0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a12c49e0.js.map",
-    "static/js/2.85eb52b5.chunk.js": "/static/js/2.85eb52b5.chunk.js",
-    "static/js/2.85eb52b5.chunk.js.map": "/static/js/2.85eb52b5.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.0d6600df.chunk.css.map": "/static/css/main.0d6600df.chunk.css.map",
-    "static/js/2.85eb52b5.chunk.js.LICENSE.txt": "/static/js/2.85eb52b5.chunk.js.LICENSE.txt"
+    "main.css": "/tandem-trivia/static/css/main.0d6600df.chunk.css",
+    "main.js": "/tandem-trivia/static/js/main.a5ac2ce4.chunk.js",
+    "main.js.map": "/tandem-trivia/static/js/main.a5ac2ce4.chunk.js.map",
+    "runtime-main.js": "/tandem-trivia/static/js/runtime-main.b6c2cb1d.js",
+    "runtime-main.js.map": "/tandem-trivia/static/js/runtime-main.b6c2cb1d.js.map",
+    "static/js/2.85eb52b5.chunk.js": "/tandem-trivia/static/js/2.85eb52b5.chunk.js",
+    "static/js/2.85eb52b5.chunk.js.map": "/tandem-trivia/static/js/2.85eb52b5.chunk.js.map",
+    "index.html": "/tandem-trivia/index.html",
+    "static/css/main.0d6600df.chunk.css.map": "/tandem-trivia/static/css/main.0d6600df.chunk.css.map",
+    "static/js/2.85eb52b5.chunk.js.LICENSE.txt": "/tandem-trivia/static/js/2.85eb52b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a12c49e0.js",
+    "static/js/runtime-main.b6c2cb1d.js",
     "static/js/2.85eb52b5.chunk.js",
     "static/css/main.0d6600df.chunk.css",
     "static/js/main.a5ac2ce4.chunk.js"
