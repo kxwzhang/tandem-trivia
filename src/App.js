@@ -6,6 +6,7 @@ import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 import { Next } from './components/next';
 import { Splash } from './components/splash';
+import { Sidebar } from './components/sidebar';
 
 function App() {
   const [allQuestions, setAllQuestions] = useState([]);
@@ -101,6 +102,7 @@ function App() {
       {nextButton && 
         <Next nextQuestion={nextQuestion} questionNumber={questionNumber} />} 
       {!renderSplash && <div className='pick-text shimmer'>Pick your answer!</div>}
+      <Sidebar />
     </div>
   ) : (<div></div>)
   );
