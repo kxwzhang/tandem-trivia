@@ -5,6 +5,7 @@ import './animations.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 import { Next } from './components/next';
+import { Splash } from './components/splash';
 
 function App() {
   const [allQuestions, setAllQuestions] = useState([]);
@@ -14,6 +15,7 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [nextButton, setNextButton] = useState(false);
+  const [renderSplash, setRenderSplash] = useState(true);
 
   // On page load, fetch the trivia data
   useEffect(() => {
@@ -90,16 +92,15 @@ function App() {
     gameOver ? <GameOver score={score} handleStartGame={handleStartGame} /> : questions.length ? (
     <div className='trivia-container'>
       <h1 className='trivia-title'>Tandem Trivia-Hoot!</h1>
-      <Trivia 
+      {renderSplash && <Splash setRenderSplash={setRenderSplash}/>}
+      {!renderSplash && <Trivia 
         questionNumber={questionNumber + 1}
         triviaQuestion={questions[questionNumber]}
         handleUpdate={handleUpdate}
-        clicked={clicked} />
-      {
-      nextButton ? 
-      <Next nextQuestion={nextQuestion} questionNumber={questionNumber} /> : 
-      <div className='pick-text shimmer'>Pick your answer!</div>
-      }
+        clicked={clicked} />}
+      {nextButton && 
+        <Next nextQuestion={nextQuestion} questionNumber={questionNumber} />} 
+      {!renderSplash && <div className='pick-text shimmer'>Pick your answer!</div>}
     </div>
   ) : (<div></div>)
   );
