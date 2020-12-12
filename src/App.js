@@ -5,6 +5,7 @@ import './animations.css';
 import { Trivia } from './components/trivia';
 import { GameOver } from './components/game_over';
 import { Next } from './components/next';
+import { Splash } from './components/splash';
 
 function App() {
   const [allQuestions, setAllQuestions] = useState([]);

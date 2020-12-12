@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const splash = () => {
+export const Splash = () => {
   return (
     <div>
       
