@@ -92,7 +92,7 @@ function App() {
     gameOver ? <GameOver score={score} handleStartGame={handleStartGame} /> : questions.length ? (
     <div className='trivia-container'>
       <h1 className='trivia-title'>Tandem Trivia-Hoot!</h1>
-      <Splash />
+      {renderSplash && <Splash setRenderSplash={setRenderSplash}/>}
       {!renderSplash && <Trivia 
         questionNumber={questionNumber + 1}
         triviaQuestion={questions[questionNumber]}
