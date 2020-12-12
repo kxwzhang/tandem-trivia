@@ -80,6 +80,7 @@ body {
 }
 
 .trivia-answer-button {
+  transition: background-color 0.25s, color 0.25s;
   background-color: white;
   border: 1px solid purple;
   border-radius: 5px;
@@ -106,6 +107,7 @@ body {
 }
 
 .next-button {
+  transition: background-color 0.25s, color 0.25s;
   background-color: white;
   border: 1px solid purple;
   border-radius: 5px;
