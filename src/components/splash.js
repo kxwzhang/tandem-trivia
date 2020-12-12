@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const SplashContainer = styled.div`
+  display: block;
+`;
+
+const SplashItem = styled.div`
+  font-size: 20px;
+`;
+
 const RenderButton = styled.button`
   font-size: 16px;
   border-radius: 5px;
@@ -16,11 +24,11 @@ const RenderButton = styled.button`
 
 export const Splash = ({ setRenderSplash }) => {
   return (
-    <div className='splash-container'>
-      <div className='splash-items'>
+    <SplashContainer>
+      <SplashItem>
         Welcome to Tandem Trivia! Are you ready to play a game?
-      </div>
+      </SplashItem>
       <RenderButton onClick={() => setRenderSplash(false)}>Get Started</RenderButton>
-    </div>
+    </SplashContainer>
   )
 };

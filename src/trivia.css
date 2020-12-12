@@ -39,6 +39,7 @@ body {
 }
 
 .play-again {
+  transition: background-color 0.25s, color 0.25s;
   border: none;
   border-radius: 5px;
   padding: 20px;
