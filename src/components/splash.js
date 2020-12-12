@@ -30,5 +30,5 @@ export const Splash = ({ setRenderSplash }) => {
       </SplashItem>
       <RenderButton onClick={() => setRenderSplash(false)}>Get Started</RenderButton>
     </SplashContainer>
-  )
+  );
 };
