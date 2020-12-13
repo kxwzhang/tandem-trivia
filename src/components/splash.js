@@ -16,6 +16,7 @@ const RenderButton = styled.button`
   padding: 8px;
   transition: background-color 0.25s, color 0.25s;
   margin-top: 8px;
+  margin-bottom: 8px;
 
   &:hover {
     background-color: rgb(223, 170, 223);

@@ -24,11 +24,10 @@ const OpenBtn = styled.span`
   border-radius: 5px;
   border: none;
   padding: 8px;
-  transition: background-color 0.25s, color 0.25s;
-  margin-top: 10px;
+  transition: color 0.25s;
 
   &:hover {
-    background-color: rgb(223, 170, 223);
+    color: #f1f1f1;
   }
 `;
 
@@ -38,6 +37,7 @@ const CloseBtn = styled.a`
   top: 0;
   right: 25px;
   font-size: 20px;
+  margin-top: 8px;
   margin-left: 50px;
 `;
 
@@ -55,8 +55,6 @@ const SideNavLinks = styled.a`
 `;
 
 export const Sidebar = () => {
-  // const closeBtn = useRef();
-  // const openBtn = useRef();
   const sideNav = useRef();
 
   return (
@@ -65,7 +63,7 @@ export const Sidebar = () => {
     </OpenBtn>
       <SideNav ref={sideNav}>
         <CloseBtn
-          onClick={() => sideNav.current.style.width = '0'}>Close</CloseBtn>
+          onClick={() => sideNav.current.style.width = '0'}>close</CloseBtn>
         <SideNavLinks 
           href="https://www.linkedin.com/in/kevinxzhang/"
           target="_blank">linkedin</SideNavLinks>
@@ -76,7 +74,6 @@ export const Sidebar = () => {
           href="https://github.com/kxwzhang"
           target="_blank">github</SideNavLinks>
       </SideNav>
-      
     </div>
   );
 };
